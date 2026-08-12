@@ -1,0 +1,1254 @@
+```html
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta 
+        name="viewport" 
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link 
+        rel="icon" 
+        type="image/png" 
+        href="recursos/imagen.png"
+    >
+
+    <title>BN - Juntos Somos Liderazgo</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link 
+        rel="preconnect" 
+        href="https://fonts.gstatic.com" 
+        crossorigin
+    >
+
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;1,700&display=swap" 
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="logo-container">
+
+        <img 
+            src="recursos/imagen.png" 
+            alt="BN Logo"
+        >
+
+    </div>
+
+
+    <nav>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#">Personas</a>
+            </li>
+
+            <li>
+                <a href="#">PYMES</a>
+            </li>
+
+            <li>
+                <a href="#">Corporativo</a>
+            </li>
+
+            <li>
+                <a href="#">Subsidiarias</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <div class="action-links">
+
+        <a 
+            href="#" 
+            class="link-quote"
+        >
+            Cotice su préstamo
+        </a>
+
+
+        <button 
+            class="btn-open-account" 
+            id="btn-abrir"
+        >
+            Abrir cuenta
+        </button>
+
+
+        <button class="btn-online-banking">
+            Banca en línea
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<main class="hero">
+
+
+    <div class="hero-content">
+
+        <div class="text-main">
+
+            JUNT<span>O</span>S<br>
+
+            SOMOS
+
+        </div>
+
+
+        <span class="text-sub">
+
+            Liderazgo
+
+        </span>
+
+    </div>
+
+
+
+    <!-- =================================================
+         MENÚ LATERAL
+    ================================================== -->
+
+    <div class="sidebar-menu">
+
+
+        <a 
+            href="#" 
+            class="sidebar-item bg-blue" 
+            id="btn-tipo-cambio"
+        >
+
+            <span>📊</span>
+
+            Tipo de cambio
+
+        </a>
+
+
+
+        <a 
+            href="#" 
+            class="sidebar-item bg-blue" 
+            id="btn-bn-citas"
+        >
+
+            <span>📅</span>
+
+            BN Citas
+
+        </a>
+
+
+
+        <a 
+            href="#" 
+            class="sidebar-item bg-light-green"
+        >
+
+            <span>🤖</span>
+
+            Asistente BN
+
+        </a>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     MODAL ABRIR CUENTA
+===================================================== -->
+
+<div 
+    class="modal-overlay" 
+    id="modalFormulario"
+>
+
+
+    <div class="contenedor-formulario">
+
+
+        <!-- CERRAR -->
+
+        <button 
+            class="btn-cerrar" 
+            id="btn-cerrar"
+        >
+
+            &times;
+
+        </button>
+
+
+
+        <h2>
+
+            Abrir Cuenta
+
+        </h2>
+
+
+
+        <p class="modal-subtitle">
+
+            Complete sus datos para continuar con la apertura de su cuenta.
+
+        </p>
+
+
+
+        <!-- NOMBRE -->
+
+        <div class="grupo">
+
+            <label for="nombre">
+
+                Nombre
+
+            </label>
+
+
+            <input 
+                type="text" 
+                id="nombre"
+                placeholder="Ingrese su nombre"
+            >
+
+        </div>
+
+
+
+        <!-- APELLIDO -->
+
+        <div class="grupo">
+
+            <label for="apellido">
+
+                Apellido
+
+            </label>
+
+
+            <input 
+                type="text" 
+                id="apellido"
+                placeholder="Ingrese su apellido"
+            >
+
+        </div>
+
+
+
+        <!-- CORREO -->
+
+        <div class="grupo">
+
+            <label for="correo">
+
+                Correo Electrónico
+
+            </label>
+
+
+            <input 
+                type="email"
+                id="correo"
+                placeholder="ejemplo@correo.com"
+            >
+
+        </div>
+
+
+
+        <!-- CONTRASEÑA -->
+
+        <div class="grupo">
+
+            <label for="contrasena">
+
+                Contraseña
+
+            </label>
+
+
+            <input 
+                type="password"
+                id="contrasena"
+                placeholder="Ingrese su contraseña"
+            >
+
+        </div>
+
+
+
+        <!-- TELEFONO -->
+
+        <div class="grupo">
+
+            <label for="telefono">
+
+                Teléfono
+
+            </label>
+
+
+            <div class="telefono-box">
+
+
+                <select id="codigo-pais">
+
+                    <option value="+506">
+
+                        🇨🇷 +506
+
+                    </option>
+
+                </select>
+
+
+
+                <input 
+                    type="tel"
+                    id="telefono"
+                    placeholder="6848-7215"
+                    maxlength="9"
+                    inputmode="numeric"
+                >
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BOTON REGISTRAR -->
+
+        <button 
+            class="btn-enviar" 
+            id="btn-siguiente"
+        >
+
+            Registrar
+
+        </button>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MODAL TIPO DE CAMBIO
+===================================================== -->
+
+<div 
+    class="modal-overlay" 
+    id="modalTipoCambio"
+>
+
+
+    <div class="contenedor-formulario">
+
+
+        <button 
+            class="btn-cerrar" 
+            id="cerrarTipoCambio"
+        >
+
+            &times;
+
+        </button>
+
+
+
+        <h2>
+
+            Tipo de Cambio
+
+        </h2>
+
+
+
+        <div class="cambio-info">
+
+
+            <div class="cambio-card">
+
+                <h3>
+
+                    Compra
+
+                </h3>
+
+
+                <p>
+
+                    ₡500.00
+
+                </p>
+
+            </div>
+
+
+
+            <div class="cambio-card">
+
+                <h3>
+
+                    Venta
+
+                </h3>
+
+
+                <p>
+
+                    ₡515.00
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MODAL BN CITAS
+===================================================== -->
+
+<div 
+    class="modal-overlay" 
+    id="modalBNCitas"
+>
+
+
+    <div class="contenedor-formulario">
+
+
+        <button 
+            class="btn-cerrar" 
+            id="cerrarBNCitas"
+        >
+
+            &times;
+
+        </button>
+
+
+
+        <h2>
+
+            BN Citas
+
+        </h2>
+
+
+
+        <p class="modal-subtitle">
+
+            Reserve una cita en una sucursal del Banco Nacional.
+
+        </p>
+
+
+
+        <!-- TRAMITE -->
+
+        <div class="grupo">
+
+            <label for="tramite">
+
+                Tipo de trámite
+
+            </label>
+
+
+            <select id="tramite">
+
+                <option>
+                    Apertura de cuenta
+                </option>
+
+                <option>
+                    Solicitud de préstamo
+                </option>
+
+                <option>
+                    Actualización de datos
+                </option>
+
+                <option>
+                    Tarjetas
+                </option>
+
+                <option>
+                    Retiro de ahorros
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- SUCURSAL -->
+
+        <div class="grupo">
+
+            <label for="sucursal">
+
+                Sucursal
+
+            </label>
+
+
+            <select id="sucursal">
+
+                <option>Cartago</option>
+
+                <option>San José</option>
+
+                <option>Heredia</option>
+
+                <option>Alajuela</option>
+
+                <option>Limón</option>
+
+                <option>Puntarenas</option>
+
+                <option>Guanacaste</option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- FECHA -->
+
+        <div class="grupo">
+
+            <label for="fecha">
+
+                Fecha
+
+            </label>
+
+
+            <input 
+                type="date" 
+                id="fecha"
+            >
+
+        </div>
+
+
+
+        <!-- HORA -->
+
+        <div class="grupo">
+
+            <label for="hora">
+
+                Hora
+
+            </label>
+
+
+            <input 
+                type="time" 
+                id="hora"
+            >
+
+        </div>
+
+
+
+        <button class="btn-enviar">
+
+            Reservar cita
+
+        </button>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MODAL ADVERTENCIA PHISHING
+===================================================== -->
+
+<div 
+    class="modal-overlay" 
+    id="modalPhishing"
+>
+
+
+    <div 
+        class="contenedor-formulario advertencia-phishing"
+    >
+
+
+        <!-- ICONO -->
+
+        <div class="icono-advertencia">
+
+            ⚠️
+
+        </div>
+
+
+
+        <h2>
+
+            ¡Cuidado!
+
+        </h2>
+
+
+
+        <h3 class="titulo-simulacion">
+
+            Esta era una simulación de Phishing
+
+        </h3>
+
+
+
+        <p>
+
+            El formulario parecía legítimo, pero acabas de llegar
+            al punto en el que una página maliciosa podría intentar
+            obtener tus datos.
+
+        </p>
+
+
+
+        <!-- DATOS COMPROMETIDOS -->
+
+        <div class="datos-comprometidos">
+
+
+            <h3>
+
+                🚨 Datos que habrían quedado expuestos
+
+            </h3>
+
+
+
+            <ul>
+
+                <li>
+
+                    👤 Nombre
+
+                </li>
+
+
+                <li>
+
+                    👤 Apellido
+
+                </li>
+
+
+                <li>
+
+                    📧 Correo electrónico
+
+                </li>
+
+
+                <li>
+
+                    📱 Número de teléfono
+
+                </li>
+
+
+                <li>
+
+                    🔑 Contraseña
+
+                </li>
+
+            </ul>
+
+
+        </div>
+
+
+
+        <p>
+
+            <strong>
+
+                IMPORTANTE:
+
+            </strong>
+
+            esta simulación no envía ni almacena ninguno
+            de estos datos.
+
+        </p>
+
+
+
+        <!-- CONSEJOS -->
+
+        <div class="consejos-phishing">
+
+
+            <h3>
+
+                🔎 ¿Qué señales debes revisar?
+
+            </h3>
+
+
+
+            <ul>
+
+                <li>
+
+                    🔒 Verifica que la página utilice HTTPS.
+
+                </li>
+
+
+                <li>
+
+                    🌐 Comprueba cuidadosamente la dirección del sitio web.
+
+                </li>
+
+
+                <li>
+
+                    📧 No introduzcas información personal
+                    en enlaces sospechosos.
+
+                </li>
+
+
+                <li>
+
+                    🏦 Accede al banco desde su sitio oficial.
+
+                </li>
+
+
+                <li>
+
+                    ⚠️ Desconfía de solicitudes inesperadas
+                    de información.
+
+                </li>
+
+
+                <li>
+
+                    🔍 Revisa errores ortográficos,
+                    diseños extraños o direcciones sospechosas.
+
+                </li>
+
+            </ul>
+
+
+        </div>
+
+
+
+        <!-- MENSAJE FINAL -->
+
+        <div class="mensaje-final">
+
+
+            <strong>
+
+                Recuerda:
+
+            </strong>
+
+
+            Un sitio puede parecer profesional y aun así
+            ser una página de phishing.
+
+
+        </div>
+
+
+
+        <!-- CERRAR -->
+
+        <button 
+            class="btn-enviar" 
+            id="cerrarPhishing"
+        >
+
+            Entendido
+
+        </button>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   ELEMENTOS DEL MODAL ABRIR CUENTA
+===================================================== */
+
+const btnAbrir = document.getElementById('btn-abrir');
+
+const btnCerrar = document.getElementById('btn-cerrar');
+
+const modal = document.getElementById('modalFormulario');
+
+
+
+/* =====================================================
+   ABRIR CUENTA
+===================================================== */
+
+btnAbrir.addEventListener('click', () => {
+
+    modal.classList.add('mostrar');
+
+});
+
+
+
+/* =====================================================
+   CERRAR CUENTA
+===================================================== */
+
+btnCerrar.addEventListener('click', () => {
+
+    modal.classList.remove('mostrar');
+
+});
+
+
+
+/* =====================================================
+   TIPO DE CAMBIO
+===================================================== */
+
+const btnTipoCambio =
+    document.getElementById('btn-tipo-cambio');
+
+const modalTipoCambio =
+    document.getElementById('modalTipoCambio');
+
+const cerrarTipoCambio =
+    document.getElementById('cerrarTipoCambio');
+
+
+
+btnTipoCambio.addEventListener('click', (e) => {
+
+    e.preventDefault();
+
+    modalTipoCambio.classList.add('mostrar');
+
+});
+
+
+
+cerrarTipoCambio.addEventListener('click', () => {
+
+    modalTipoCambio.classList.remove('mostrar');
+
+});
+
+
+
+/* =====================================================
+   BN CITAS
+===================================================== */
+
+const btnBNCitas =
+    document.getElementById('btn-bn-citas');
+
+const modalBNCitas =
+    document.getElementById('modalBNCitas');
+
+const cerrarBNCitas =
+    document.getElementById('cerrarBNCitas');
+
+
+
+btnBNCitas.addEventListener('click', (e) => {
+
+    e.preventDefault();
+
+    modalBNCitas.classList.add('mostrar');
+
+});
+
+
+
+cerrarBNCitas.addEventListener('click', () => {
+
+    modalBNCitas.classList.remove('mostrar');
+
+});
+
+
+
+/* =====================================================
+   CERRAR MODAL HACIENDO CLICK AFUERA
+===================================================== */
+
+modal.addEventListener('click', (e) => {
+
+    if (e.target === modal) {
+
+        modal.classList.remove('mostrar');
+
+    }
+
+});
+
+
+
+modalTipoCambio.addEventListener('click', (e) => {
+
+    if (e.target === modalTipoCambio) {
+
+        modalTipoCambio.classList.remove('mostrar');
+
+    }
+
+});
+
+
+
+modalBNCitas.addEventListener('click', (e) => {
+
+    if (e.target === modalBNCitas) {
+
+        modalBNCitas.classList.remove('mostrar');
+
+    }
+
+});
+
+
+
+/* =====================================================
+   SIMULACIÓN DE PHISHING
+===================================================== */
+
+const btnSiguiente =
+    document.getElementById('btn-siguiente');
+
+const modalPhishing =
+    document.getElementById('modalPhishing');
+
+const cerrarPhishing =
+    document.getElementById('cerrarPhishing');
+
+
+
+btnSiguiente.addEventListener('click', (e) => {
+
+    e.preventDefault();
+
+
+
+    /* =============================================
+       OBTENER DATOS
+    ============================================= */
+
+    const nombre =
+        document.getElementById('nombre').value.trim();
+
+
+    const apellido =
+        document.getElementById('apellido').value.trim();
+
+
+    const correo =
+        document.getElementById('correo').value.trim();
+
+
+    const telefono =
+        document.getElementById('telefono').value.trim();
+
+
+    const contrasena =
+        document.getElementById('contrasena').value;
+
+
+
+    /* =============================================
+       VALIDAR CAMPOS
+    ============================================= */
+
+    if (
+        nombre === "" ||
+        apellido === "" ||
+        correo === "" ||
+        telefono === "" ||
+        contrasena === ""
+    ) {
+
+        alert(
+            "Por favor, complete todos los campos."
+        );
+
+        return;
+
+    }
+
+
+
+    /* =============================================
+       VALIDAR CORREO
+    ============================================= */
+
+    const correoValido =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    if (!correoValido.test(correo)) {
+
+        alert(
+            "Ingrese un correo electrónico válido."
+        );
+
+        return;
+
+    }
+
+
+
+    /* =============================================
+       VALIDAR TELEFONO
+    ============================================= */
+
+    const telefonoValido =
+        /^\d{4}-\d{4}$/;
+
+
+    if (!telefonoValido.test(telefono)) {
+
+        alert(
+            "Ingrese un número válido.\n\n" +
+            "Ejemplo: 6848-7215"
+        );
+
+        return;
+
+    }
+
+
+
+    /* =============================================
+       ALERTA EDUCATIVA
+    ============================================= */
+
+    alert(
+
+        "⚠️ SIMULACIÓN DE PHISHING\n\n" +
+
+        "Los siguientes datos habrían quedado " +
+        "comprometidos:\n\n" +
+
+        "• Nombre\n" +
+
+        "• Apellido\n" +
+
+        "• Correo electrónico\n" +
+
+        "• Número de teléfono\n" +
+
+        "• Contraseña\n\n" +
+
+        "IMPORTANTE:\n" +
+
+        "Esta es una simulación educativa. " +
+
+        "Los datos NO fueron enviados ni almacenados."
+
+    );
+
+
+
+    /* =============================================
+       CERRAR FORMULARIO
+    ============================================= */
+
+    modal.classList.remove('mostrar');
+
+
+
+    /* =============================================
+       MOSTRAR ADVERTENCIA
+    ============================================= */
+
+    modalPhishing.classList.add('mostrar');
+
+});
+
+
+
+/* =====================================================
+   CERRAR ADVERTENCIA PHISHING
+===================================================== */
+
+cerrarPhishing.addEventListener('click', () => {
+
+    modalPhishing.classList.remove('mostrar');
+
+});
+
+
+
+/* =====================================================
+   CERRAR PHISHING HACIENDO CLICK AFUERA
+===================================================== */
+
+modalPhishing.addEventListener('click', (e) => {
+
+    if (e.target === modalPhishing) {
+
+        modalPhishing.classList.remove('mostrar');
+
+    }
+
+});
+
+
+
+/* =====================================================
+   FORMATO AUTOMÁTICO DEL TELÉFONO
+===================================================== */
+
+const telefonoInput =
+    document.getElementById('telefono');
+
+
+
+telefonoInput.addEventListener('input', () => {
+
+
+    /*
+        Eliminar cualquier carácter
+        que no sea número.
+    */
+
+    let numero =
+        telefonoInput.value.replace(/\D/g, '');
+
+
+
+    /*
+        Limitar a 8 dígitos.
+    */
+
+    numero =
+        numero.substring(0, 8);
+
+
+
+    /*
+        Agregar automáticamente
+        el guion después de 4 números.
+    */
+
+    if (numero.length > 4) {
+
+        numero =
+            numero.substring(0, 4) +
+            '-' +
+            numero.substring(4);
+
+    }
+
+
+
+    telefonoInput.value = numero;
+
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        modal.classList.remove('mostrar');
+        modalTipoCambio.classList.remove('mostrar');
+        modalBNCitas.classList.remove('mostrar');
+        modalPhishing.classList.remove('mostrar');
+    }
+});
+</script>
+</body>
+</html>

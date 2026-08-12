@@ -1,0 +1,447 @@
+/* --- CONFIGURACIÓN GENERAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
+/* --- MENÚ SUPERIOR (HEADER) --- */
+header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 4%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 10;
+}
+
+.logo-container img {
+    height: 42px;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-links li.dropdown a::after {
+    content: '▾';
+    font-size: 12px;
+    color: #666;
+}
+
+.action-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.link-quote {
+    text-decoration: none;
+    color: #0c4383;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.btn-open-account {
+    border: 2px solid #0c4383;
+    color: #0c4383;
+    background: transparent;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.btn-open-account:hover {
+    background-color: #0c4383;
+    color: #ffffff;
+}
+
+.btn-online-banking {
+    background-color: #a2b012; 
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-icon {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* --- HERO BANNER --- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 72px);
+    min-height: 550px;
+    background: url('https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=1974&auto=format&fit=crop') no-repeat center center/cover; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 10%;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.1); 
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    text-shadow: 3px 3px 15px rgba(0,0,0,0.4);
+    line-height: 0.85;
+}
+
+.text-main {
+    font-size: 120px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -3px;
+}
+
+.text-main span {
+    color: #a2b012; 
+}
+
+.text-sub {
+    font-size: 80px;
+    color: #a2b012;
+    font-style: italic;
+    font-weight: 800;
+    display: block;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+/* --- MENÚ LATERAL Y ACCESIBILIDAD --- */
+.sidebar-menu {
+    position: absolute;
+    right: 0;
+    top: 25%;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    width: 190px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    box-shadow: -2px 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.sidebar-item:hover {
+    transform: translateX(-8px);
+}
+
+.bg-blue { background-color: #0c4383; }
+.bg-light-green { background-color: #a2b012; }
+
+.accessibility-btn {
+    position: absolute;
+    left: 20px;
+    bottom: 25px;
+    z-index: 3;
+    background-color: #0c4383;
+    color: #ffffff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* --- VENTANA MODAL (ESTILOS DEL FORMULARIO INTERCALADOS) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Fondo oscuro traslúcido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+/* Clase que activa el JavaScript para mostrar el formulario */
+.modal-overlay.mostrar {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.contenedor-formulario {
+    width: 550px;
+    max-width: 90%;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.4s ease;
+}
+
+.modal-overlay.mostrar .contenedor-formulario {
+    transform: translateY(0);
+}
+
+.contenedor-formulario h2 {
+    color: #0c4383;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.modal-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.btn-cerrar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #999;
+    cursor: pointer;
+    width: auto;
+    padding: 0;
+}
+
+.btn-cerrar:hover {
+    color: #333;
+    background: none;
+}
+
+/* Tus estilos de inputs adaptados */
+.grupo {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #cfcfcf;
+    border-radius: 12px;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #0c4383;
+}
+
+/* Caja de teléfono */
+.telefono-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cfcfcf;
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+}
+
+.telefono-box select {
+    border: none;
+    outline: none;
+    padding: 14px;
+    font-size: 15px;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.telefono-box input {
+    border: none;
+    border-radius: 0;
+    flex: 1;
+}
+
+.telefono-box:focus-within {
+    border-color: #0c4383;
+}
+
+/* Botón de Enviar dentro del Formulario */
+.btn-enviar {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: #0c4383;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.btn-enviar:hover {
+    background: #082d59;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    header { flex-direction: column; gap: 15px; }
+    .nav-links, .action-links { flex-wrap: wrap; justify-content: center; }
+    .hero { justify-content: center; }
+    .text-main { font-size: 75px; }
+    .text-sub { font-size: 50px; }
+    .sidebar-menu { display: none; }
+}
+
+/* Modal oculto por defecto */
+.modal-tipo-cambio{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    z-index: 1000;
+}
+
+/* Mostrar modal cuando el checkbox esté marcado */
+#mostrar-tipo-cambio:checked ~ .modal-tipo-cambio{
+    opacity: 1;
+    visibility: visible;
+}
+
+.tipo-cambio-box{
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 350px;
+    text-align: center;
+    position: relative;
+}
+
+.btn-cerrar{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #333;
+}
+
+.cambio-info{
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.cambio-card{
+    flex: 1;
+    background: #f4f4f4;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.cambio-card h3{
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.cambio-card p{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #008542;
+}
+
+/* IMPORTANTE */
+#mostrar-tipo-cambio:checked ~ .modal-tipo-cambio{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-subtitle{
+    color:#666;
+    margin-bottom:20px;
+}
+
+.grupo{
+    margin-bottom:15px;
+}
+
+.grupo label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:600;
+}
+
+.grupo select,
+.grupo input{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:14px;
+}
